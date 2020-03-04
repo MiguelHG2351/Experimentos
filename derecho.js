@@ -1,4 +1,4 @@
-let derecho = document.getElementById("derecho");
+const derecho = document.getElementById("derecho");
 const body = document.getElementById("body");
 
 function render() {
@@ -8,7 +8,7 @@ function render() {
     setTimeout(() => {
       derecho.style.left = `${x}px`;
       derecho.style.top = `${y}px`;
-    }, 40);
+    }, 500);
   }
 
   window.addEventListener("mousemove", agregarPosicion, true);
@@ -30,4 +30,5 @@ body.addEventListener("contextmenu", e => {
 });
 
 body.addEventListener('resize', render)
+
 render();
