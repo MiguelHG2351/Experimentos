@@ -1,7 +1,7 @@
 const derecho = document.getElementById("derecho");
 const body = document.getElementById("body");
 
-function render() {
+function renderi() {
   function agregarPosicion(e) {
     var x = e.offsetX;
     var y = e.offsetY;
@@ -11,10 +11,10 @@ function render() {
     }, 500);
   }
 
-  window.addEventListener("mousemove", agregarPosicion, true);
+  body.addEventListener("mousemove", agregarPosicion, true);
 
   derecho.addEventListener("mouseenter", () => {
-    window.removeEventListener("mousemove", agregarPosicion, true);
+    body.removeEventListener("mousemove", agregarPosicion, true);
   });
 
   body.addEventListener("mousedown", agregarPosicion, false);
@@ -29,6 +29,6 @@ body.addEventListener("contextmenu", e => {
   e.preventDefault();
 });
 
-body.addEventListener('resize', render)
+body.addEventListener('resize', renderi)
 
-render();
+renderi();

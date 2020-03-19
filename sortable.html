@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sortable</title>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="huracanHD.jpg" id="image" width="350px" alt="Lanzar">
+    </div>
+
+    <div class="soltar" style="width: 450px; height: 350px; background-color: #ffe95e;" id="soltar">
+
+    </div>
+
+    <script>
+        const img = document.querySelector('#image')
+        const lanzar = document.querySelector('#soltar')
+
+        function init() {
+            img.addEventListener('dragstart', (e) => {
+                var codigo = `<img src=${img.src} width=${img.width} />`
+                e.dataTransfer.setData('text', codigo)
+            })
+
+            lanzar.addEventListener('dragenter', (e) => {
+                e.preventDefault()
+            })
+
+            lanzar.addEventListener('dragover', (e) => {
+                e.preventDefault()
+            })
+
+            lanzar.addEventListener('drop', (e) => {
+                e.preventDefault()
+                lanzar.innerHTML = e.dataTransfer.getData('text')
+            })
+
+        }
+
+        window.addEventListener('load', init)
+
+        // init()
+
+    </script>
+
+</body>
+</html>
