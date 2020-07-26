@@ -23,9 +23,9 @@
 
         function getData(formData) {
             const input = formData.get("phone")
-            if(data.SAMSUNG[0][input] != undefined) {
-                console.log(data.SAMSUNG[0][input])
-                alert(data.SAMSUNG[0][input])
+            if(data[input] != undefined) {
+                console.log(data[input][0].url)
+                alert(data[input][0].url)
             } else {
                 console.log("Lo escribiste mal compa")
                 alert("Lo escribiste mal compa")
