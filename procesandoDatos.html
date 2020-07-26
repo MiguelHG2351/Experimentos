@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de telefonos moviles</title>
+    <style>
+        p {
+            font-size: Arial;
+        }
+    </style>
+</head>
+<body>
+    <p>Hola Mundo xd</p>
+    <form id="form">
+        <input type="text" name="phone" placeholder="Buscar dispositivo" />
+        <button type="submit">Send Data</button>
+    </form>
+
+    <script type="module">
+        import data from "./data.js"
+        const $form = document.getElementById("form")
+
+        function getData(formData) {
+            const input = formData.get("phone")
+            if(data.SAMSUNG[0][input] != undefined) {
+                console.log(data.SAMSUNG[0][input])
+                alert(data.SAMSUNG[0][input])
+            } else {
+                console.log("Lo escribiste mal compa")
+                alert("Lo escribiste mal compa")
+            }
+        }
+
+        $form.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const formData = new FormData(e.currentTarget)
+            getData(formData)
+        })
+    </script>
+</body>
+</html>
+
+<!-- https://music.youtube.com/watch?v=tkNx2UfAflU&list=RDAMVMtkNx2UfAflU -->
